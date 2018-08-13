@@ -6,11 +6,12 @@ import {ClimaComponent} from "../menu-components/clima/clima.component";
 import {NoticiasComponent} from "../menu-components/noticias/noticias.component";
 import {RouterModule, Routes} from "@angular/router";
 
+
 const routes: Routes = [
-  {path: 'noticias', component: NoticiasComponent},
+  {path: 'noticias/:id', component: NoticiasComponent},
   {path: 'descripcion/:id', component: DescripcionComponent},
-  {path: 'moneda', component: MonedaComponent},
-  {path: 'clima', component: ClimaComponent},
+  {path: 'moneda/:id', component: MonedaComponent},
+  {path: 'clima/:id', component: ClimaComponent},
 ];
 
 @NgModule({

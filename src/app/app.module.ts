@@ -9,6 +9,7 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { DescripcionComponent } from './menu-components/descripcion/descripcion.component';
 import { MonedaComponent } from './menu-components/moneda/moneda.component';
 import { ClimaComponent } from './menu-components/clima/clima.component'
+import {CountriesService} from "./app-services/countries.service"
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ClimaComponent } from './menu-components/clima/clima.component'
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CountriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,6 +1,29 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <div class="container-fluid">
+    <h3>
+      {{title}}
+    </h3>
+    <div class="col-md-6">
+      <combo-box [listData]="countries" [displayField]="'name'" [valueField]="'numericCode'"
+                 (onQuery)="onQuery($event)"
+                 (onSelect)="onSelect($event)"
+                 [remote]="true"
+                 [(ngModel)]="countrie_select">
+      </combo-box>
+      <div id="mapid">
 
-<button class="btn-primary"><i class="fa fa-rocket"></i> Aceptar</button>
-
+      </div>
+    </div>
+    <div class="col-md-5">
+      <nav class="navbar navbar-light bg-light">
+        <button class="btn btn-primary" [routerLink]="['descripcion',countrie_select]">Descripción</button>
+        <button class="btn btn-primary" [routerLink]="['noticias',countrie_select]">Noticias</button>
+        <button class="btn btn-primary" [routerLink]="['moneda',countrie_select]">Moneda</button>
+        <button class="btn btn-primary" [routerLink]="['clima',countrie_select]">Clima</button>
+      </nav>
+      <div class="fa-border">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
